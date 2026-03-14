@@ -34,6 +34,14 @@ suitable for review by a scientific domain expert who cannot read R code.
 - **Fidelity**: Do not infer intent beyond what the code supports. If
   something is ambiguous, note it explicitly as a point for the reviewer
   to confirm.
+- **Calculation detail**: In sections that perform calculations, describe
+  each operation in plain algebraic terms. Express formulas using plain
+  language variables and standard symbols (×, ÷, +, −) rather than R
+  syntax. For example: *"Estimated emissions = consumption × emission
+  factor"*. Each distinct calculation should appear as its own sub-step
+  or inline formula so a reviewer could reconstruct the arithmetic
+  independently. For non-calculation sections (data loading, reshaping,
+  filtering), maintain the higher-level grouping style.
 
 ---
 
@@ -69,7 +77,13 @@ Write a numbered list of methodology steps. Follow these rules:
    it for reviewer confirmation.
 5. **Note any iterative or recursive logic** in plain terms (e.g., "This step
    is repeated for each year in the study period").
-6. **Flag ambiguities** inline with a note: *[Reviewer note: please confirm
+6. **For calculation steps, express each operation algebraically** using plain
+   variable names and standard symbols. Present as sub-steps when multiple
+   distinct calculations occur in sequence. Example:
+   - 6.1. Sector-partitioned imports = total imports × sector share
+   - 6.2. Sector-partitioned exports = total exports × sector share
+   - 6.3. Sector-partitioned production = total production × sector share
+7. **Flag ambiguities** inline with a note: *[Reviewer note: please confirm
    whether X is intended here]*.
 
 ### Step 3 — Add a Preamble and Closing Summary
