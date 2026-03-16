@@ -142,6 +142,30 @@ limitations, or items requiring reviewer confirmation.]
 
 ---
 
+## Handling Unknown Custom Functions
+
+R scripts frequently call custom functions defined elsewhere — in a separate sourced file, an internal package, or earlier in the same script. When the narrative encounters a call to a custom function whose source code is not available in the provided script, apply the following rules:
+
+### Tier 1 — Semantically transparent name
+If the function name clearly implies its purpose (e.g., `calculate_emissions`, `apply_emission_factor`, `process_component`), a plain-language inference is acceptable. State what the function appears to do based on its name and its inputs/outputs, but flag it explicitly:
+
+> **Reviewer note:** The function `[name]` is defined externally and was not available for review. The description above is inferred from its name and calling context. Please confirm this interpretation against the source definition.
+
+### Tier 2 — Opaque name
+If the function name does not imply its purpose (e.g., `run_step2`, `helper_fn`, `do_calc`), do not attempt a description. Instead, note only that a custom sub-routine is called, identify its inputs and outputs as visible from the calling script, and direct the reviewer to the source:
+
+> **Reviewer note:** A custom function (`[name]`) is called here. Its internal logic was not available in this script. Please review its source definition separately before approving this methodology step.
+
+### Tier 3 — Source file referenced
+If the script contains a `source()` call that loads an external file, name that dependency explicitly in the preamble or in the relevant step:
+
+*"This step calls a custom routine loaded from `[filename]`, which was not included in the materials reviewed."*
+
+### General principle
+Never silently absorb an unknown custom function into the narrative as if its behavior were confirmed. The goal is a methodology document a reviewer can trust — unverified inferences must always be visible as such.
+
+---
+
 ## Notes on Common R Patterns
 
 Translate these patterns into plain language without mentioning R:
