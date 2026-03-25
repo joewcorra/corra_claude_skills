@@ -11,7 +11,7 @@ This repository contains reusable Claude Skills that provide enhanced functional
 ### 📊 R Methodology Narrator
 **Directory:** `r-methodology-narrator/`
 
-A skill that provides narrative explanations of R methodologies. This skill helps Claude deliver comprehensive, methodology-focused insights for research-related tasks. This skill directs Claude to translate R code into a detailed, step-by-step methodology to facilitate review and collaboration with domain experts.
+A skill that provides narrative explanations of R methodologies. This skill helps Claude deliver comprehensive, methodology-focused insights for research-related tasks. This skill directs Claude to translate R code into a detailed, step-by-step methodology in plain language to facilitate review and collaboration with domain experts.
 
 [Learn more →](./r-methodology-narrator/)
 
