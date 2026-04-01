@@ -27,8 +27,8 @@ This skill is purpose-built for the U.S. GHG Inventory. Its conventions — func
 | Skill | Role |
 |---|---|
 | `ghg-methodology-parser` | Translates narrative inventory methodology into a structured, language-agnostic implementation framework |
-| `r-ghg-coder` | Converts that framework into production R code ← *this skill* |
-| `r-methodology-narrator` | Translates completed R modules back into plain-language methodology documentation |
+| `r-ghg-coder` | Converts that framework into production R code |
+| `r-methodology-narrator` | Translates completed R modules back into plain-language methodology documentation. Ideal for reviewing step-by-step process |
 
 [Learn more →](./r-ghg-coder/)
 
