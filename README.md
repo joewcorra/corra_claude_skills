@@ -32,6 +32,20 @@ This skill is purpose-built for the U.S. GHG Inventory. Its conventions — func
 
 [Learn more →](./r-ghg-coder/)
 
+### 🧭 GHG Methodology Parser
+**Directory:** `ghg-methodology-parser/`
+
+A parser skill that reads narrative methodology text (e.g., sections of an inventory methodology or methodological guidance) and translates it into a structured, language-agnostic implementation framework. The framework produced by this skill is intended to be consumed by `r-ghg-coder` to generate production-ready R code. Use this skill when you want to convert methodological prose into a clear sequence of calculation steps, inputs/outputs, and dependencies.
+
+[Learn more →](./ghg-methodology-parser/)
+
+### ⚖️ R Minimize Conditionals
+**Directory:** `r-minimize-conditionals/`
+
+A style-and-review skill that enforces a strong preference to avoid scalar `if`/`else` control flow in R when cleaner alternatives exist (e.g., `case_when()`, named-vector lookups, `dplyr::case_when()`, guard clauses, or dispatch tables). Use this skill when writing, refactoring, or reviewing R code — it proactively checks branching points and suggests idiomatic, maintainable alternatives while allowing vectorized conditionals (`ifelse()`, `dplyr::if_else()`, `case_when()`) to remain unchanged.
+
+[Learn more →](./r-minimize-conditionals/)
+
 ## Structure
 
 Each skill is organized in its own directory with:
@@ -56,4 +70,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ---
 
 **Created by:** [@joewcorra](https://github.com/joewcorra)  
-**Last Updated:** April 1, 2026
+**Last Updated:** July 15, 2026
